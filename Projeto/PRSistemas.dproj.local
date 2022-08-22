@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/08/07 15:01:27.000.437,=C:\Users\Carolina\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/11/10 22:46:55.000.952,=C:\Users\Carolina\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/11/10 22:48:24.000.883,C:\WkTec\uFrmMain.pas=C:\Users\Carolina\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/11/10 22:48:24.000.883,C:\WkTec\uFrmMain.fmx=C:\Users\Carolina\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2021/11/10 22:48:29.000.407,C:\WkTec\WK.dproj=C:\Users\Carolina\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2021/11/10 22:48:46.000.264,C:\WkTec\WkVendas.dproj=C:\WkTec\WK.dproj</Transaction>
+    <Transaction>2021/11/10 23:43:53.000.683,=C:\WkTec\Conexao\Model.Connection.pas</Transaction>
+    <Transaction>2021/11/11 21:53:39.000.940,C:\WkTec\Conexao\Model.Connection.pas=</Transaction>
+    <Transaction>2021/11/11 21:53:50.000.551,=C:\WkTec\Source\Conexao\Model.Connection.pas</Transaction>
+    <Transaction>2021/11/11 21:53:58.000.877,C:\WkTec\uFrmMain.pas=</Transaction>
+    <Transaction>2021/11/11 21:55:10.000.439,=C:\WkTec\Source\Forms\uFrmMain.pas</Transaction>
+    <Transaction>2021/11/11 23:26:35.000.409,=C:\WkTec\Unit1.pas</Transaction>
+    <Transaction>2021/11/11 23:28:17.000.082,C:\WkTec\Unit1.pas=C:\WkTec\Classes\uCliente.pas</Transaction>
+    <Transaction>2021/11/12 00:09:45.000.349,=C:\WkTec\Unit1.pas</Transaction>
+    <Transaction>2021/11/12 00:10:09.000.616,C:\WkTec\Unit1.pas=C:\WkTec\Classes\uProduto.pas</Transaction>
+    <Transaction>2021/11/12 00:28:29.000.529,=C:\WkTec\Unit1.pas</Transaction>
+    <Transaction>2021/11/12 01:10:08.000.098,C:\WkTec\Unit1.pas=C:\WkTec\Classes\uPedidos.pas</Transaction>
+    <Transaction>2021/11/18 12:43:54.000.726,=C:\WkTec\Unit1.pas</Transaction>
+    <Transaction>2021/11/19 12:32:43.000.004,C:\WkTec\Source\Forms\uFrmPedidos.pas=C:\WkTec\Unit1.pas</Transaction>
+    <Transaction>2021/11/19 12:32:43.000.005,C:\WkTec\Source\Forms\uFrmPedidos.fmx=C:\WkTec\Unit1.fmx</Transaction>
+    <Transaction>2022/01/12 19:35:28.000.031,C:\WkTec\Source\Forms\uFrmMain.fmx=C:\WkTec\Source\Forms\ufrmLogin.fmx</Transaction>
+    <Transaction>2022/01/12 19:35:28.000.031,C:\WkTec\Source\Forms\uFrmMain.pas=C:\WkTec\Source\Forms\ufrmLogin.pas</Transaction>
+    <Transaction>2022/01/12 19:43:01.000.880,C:\WkTec\Classes\uPedidos.pas=</Transaction>
+    <Transaction>2022/01/12 19:45:17.000.207,C:\WkTec\Classes\uProduto.pas=</Transaction>
+    <Transaction>2022/01/12 19:45:28.000.048,C:\WkTec\Classes\uCliente.pas=</Transaction>
+    <Transaction>2022/01/12 19:46:18.000.647,C:\WkTec\Source\Conexao\Model.Connection.pas=</Transaction>
+    <Transaction>2022/01/12 19:46:35.000.314,C:\WkTec\WkVendas.dproj=C:\WkTec\InfoSistemas.dproj</Transaction>
+    <Transaction>2022/01/12 21:20:18.000.700,C:\WkTec\InfoSistemas.dproj=C:\Info\Projeto\InfoSistemas.dproj</Transaction>
+    <Transaction>2022/01/12 21:31:49.000.655,=C:\Info\Projeto\Unit1.pas</Transaction>
+    <Transaction>2022/01/12 21:32:47.000.615,C:\Info\Source\Forms\ufrmCadastro.fmx=C:\Info\Projeto\Unit1.fmx</Transaction>
+    <Transaction>2022/01/12 21:32:47.000.615,C:\Info\Source\Forms\ufrmCadastro.pas=C:\Info\Projeto\Unit1.pas</Transaction>
+    <Transaction>2022/01/13 10:45:26.000.810,=C:\Info\Projeto\Unit1.pas</Transaction>
+    <Transaction>2022/01/13 11:08:30.000.254,C:\Info\Projeto\Unit1.pas=C:\Info\Source\Classes\info.Classe.Pessoa.pas</Transaction>
+    <Transaction>2022/01/13 13:01:27.000.156,=C:\Info\Projeto\Unit1.pas</Transaction>
+    <Transaction>2022/01/13 13:23:46.000.192,C:\Info\Projeto\Unit1.pas=C:\Info\Source\Library\info.funcoes.pas</Transaction>
+    <Transaction>2022/01/13 15:46:03.000.361,=C:\Info\Source\Rest\uDmRest.pas</Transaction>
+    <Transaction>2022/01/13 17:25:01.000.101,=C:\Info\Projeto\Unit1.pas</Transaction>
+    <Transaction>2022/01/13 17:25:44.000.155,C:\Info\Projeto\Unit1.fmx=C:\Info\Source\Forms\ufrmEmail.fmx</Transaction>
+    <Transaction>2022/01/13 17:25:44.000.155,C:\Info\Projeto\Unit1.pas=C:\Info\Source\Forms\ufrmEmail.pas</Transaction>
+    <Transaction>2022/08/21 15:51:52.000.350,C:\Info\Projeto\InfoSistemas.dproj=C:\Info\Projeto\PRSistemas.dproj</Transaction>
+    <Transaction>2022/08/21 16:19:38.000.810,=C:\Info\Source\Conexao\Model.Connection.pas</Transaction>
+    <Transaction>2022/08/21 16:54:06.000.818,C:\Info\Source\Classes\info.Classe.Pessoa.pas=C:\Info\Source\Classes\PR.Classe.Pessoa.pas</Transaction>
+    <Transaction>2022/08/21 16:58:22.000.487,C:\Info\Source\Library\info.funcoes.pas=C:\Info\Source\Library\PR.funcoes.pas</Transaction>
+    <Transaction>2022/08/21 16:59:29.000.899,=C:\Info\Source\Library\Ossel.firedac.funcoes.pas</Transaction>
+    <Transaction>2022/08/21 17:01:09.000.226,C:\Info\Source\Library\Ossel.firedac.funcoes.pas=</Transaction>
+    <Transaction>2022/08/21 17:04:22.000.255,=C:\Info\Projeto\Unit1.pas</Transaction>
+    <Transaction>2022/08/21 17:06:13.000.129,C:\Info\Projeto\Unit1.pas=C:\Info\Source\Classes\PR.Classe.Dados.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

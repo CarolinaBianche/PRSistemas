@@ -1,0 +1,15 @@
+program InfoSistemas;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  ufrmLogin in '..\Source\Forms\ufrmLogin.pas' {FrmLogin},
+  ufrmCadastro in '..\Source\Forms\ufrmCadastro.pas' {frmCadastro};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFrmLogin, FrmLogin);
+  Application.Run;
+end.

@@ -1,0 +1,157 @@
+unit UDMRest;
+
+interface
+
+uses
+  PR.funcoes,
+  System.SysUtils, System.Classes, REST.Types, REST.Client,
+  Data.Bind.Components, Data.Bind.ObjectScope,System.Json, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, REST.Response.Adapter, FireDAC.UI.Intf,
+  FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Stan.Def, FireDAC.Stan.Pool,
+  FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MSSQL, FireDAC.Phys.MSSQLDef,
+  FireDAC.DApt,model.Connection,uFrmLogin;
+
+type
+  TDMRest = class(TDataModule)
+    rstClient: TRESTClient;
+    rstRequest: TRESTRequest;
+    rstResponse: TRESTResponse;
+    rstAdapter: TRESTResponseDataSetAdapter;
+    MemRest: TFDMemTable;
+    Qry: TFDQuery;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    QryID: TIntegerField;
+    QryNome: TStringField;
+    QryCPF: TStringField;
+
+  private
+    { Private declarations }
+    function Execute(const AServerMethod: String;
+      AMethod: TRESTRequestMethod): Boolean;
+
+    procedure ClearToDefaults;
+
+
+  public
+    { Public declarations }
+
+   //Entradas
+   function RecebeCep(Cep:string):TStringList;
+   Function ConsultaPessoa:Boolean;
+
+  end;
+
+var
+  DMRest: TDMRest;
+
+implementation
+
+{$R *.dfm}
+
+{ TDMRest }
+
+procedure TDMRest.ClearToDefaults;
+begin
+  rstRequest.ResetToDefaults;
+  rstClient.ResetToDefaults;
+  rstResponse.ResetToDefaults;
+
+  rstRequest.Accept        := 'application/json;charset=UTF-8';
+  rstRequest.AcceptEncoding:= 'gzip, deflate, br';
+  rstClient.Accept         := 'application/json;charset=UTF-8';
+  rstClient.AcceptCharset  := 'utf-8, *;q=0.8';
+  rstClient.ContentType    := CONTENTTYPE_APPLICATION_JSON;
+  rstRequest.Params.AddHeader('X-TenantID','TRIANGULO');
+
+
+  rstResponse.RootElement := '';
+end;
+
+
+
+function TDMRest.ConsultaPessoa: Boolean;
+begin
+  Qry.Active := false;
+  Qry.Connection := Model.Connection.FConnList.Items[FrmLogin.FIndexConn];
+  Qry.SQL.Clear;
+  Qry.SQL.Add('SELECT * FROM Dados');
+  Qry.Open;
+end;
+
+function TDMRest.Execute(const AServerMethod: String;
+  AMethod: TRESTRequestMethod): Boolean;
+begin
+   Result := False;
+
+  try
+    try
+
+      rstRequest.Method := AMethod;
+
+      rstClient.BaseURL := Format('%s%s', [ 'https://viacep.com.br/ws/' , AServerMethod]);
+
+
+      rstRequest.Execute;
+
+      Result := rstResponse.StatusCode in ([200,204,201]);
+    except
+      on E: Exception do
+      begin
+        if Pos('O tempo limite da operação foi atingido', E.Message) > 0 then
+          Result := True;
+      end;
+    end;
+  finally
+
+  end;
+end;
+
+
+
+
+function TDMRest.RecebeCep(Cep:string): TStringList;
+var
+  i :integer;
+  retorno :TJSONObject;
+  Lista   :TStringList;
+  recebe :string ;
+begin
+
+  try
+   Lista := TStringList.Create;
+
+    try
+   // Reset de componentes
+      Self.ClearToDefaults;
+
+      if Execute('/'+Cep+'/json', rmGET) then
+      begin
+      retorno  :=  DMRest.rstRequest.Response.JSONValue as TJSONObject;
+      Lista.Add(retorno.GetValue('cep').Value);
+      Lista.Add(retorno.GetValue('logradouro').Value);
+      Lista.Add(retorno.GetValue('complemento').Value);
+      Lista.Add(retorno.GetValue('bairro').Value);
+      Lista.Add(retorno.GetValue('localidade').Value);
+      Lista.Add(retorno.GetValue('uf').Value);
+      Lista.Add(retorno.GetValue('ibge').Value);
+      Lista.Add(retorno.GetValue('gia').Value);
+      Lista.Add(retorno.GetValue('ddd').Value);
+      Lista.Add(retorno.GetValue('siafi').Value);
+
+      result := Lista;
+      end;
+    except
+      Result := Lista;
+    end;
+  finally
+
+  end;
+
+end;
+
+
+
+
+end.

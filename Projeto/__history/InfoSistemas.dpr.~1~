@@ -1,0 +1,14 @@
+program InfoSistemas;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  ufrmLogin in 'C:\WkTec\Source\Forms\ufrmLogin.pas' {FrmLogin};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFrmLogin, FrmLogin);
+  Application.Run;
+end.

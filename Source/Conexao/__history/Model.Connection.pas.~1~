@@ -1,0 +1,112 @@
+unit Model.Connection;
+
+interface
+
+uses
+  System.JSON,
+  FireDAC.Stan.Intf,
+  FireDAC.Stan.Option,
+  FireDAC.Stan.Error,
+  FireDAC.UI.Intf,
+  FireDAC.Phys.Intf,
+  FireDAC.Stan.Def,
+  FireDAC.Stan.Pool,
+  FireDAC.Stan.Async,
+  FireDAC.Phys,
+  Data.DB,
+  FireDAC.Comp.Client,
+  Firedac.DApt,
+  FireDAC.Phys.FB,
+  FireDAC.Phys.FBDef,
+  IniFiles,
+  SysUtils,
+  System.Generics.Collections;
+
+var
+  FDriver : TFDPhysFBDriverLink;
+  FConnList : TObjectList<TFDConnection>;
+  FConexao  : TFDConnection;
+  FRede     : String;
+  FiltroInicio :TDateTime;
+
+function  Connected(NomeBanco,Tipo:string) : Integer;
+procedure Disconnected(Index : Integer);
+
+
+
+implementation
+
+function Connected(NomeBanco,Tipo:string) : Integer;
+var
+  ini: TIniFile;
+  caminho,server, BancoDados,Usuario,Senha,Servidor,Porta,Driver :string;
+begin
+  if not Assigned(FConnList) then
+    FConnList := TObjectList<TFDConnection>.Create;
+    caminho := ExtractFilePath(ParamStr(0))+'Config.ini'  ;
+  if FileExists(caminho) then
+  Begin
+  ini := TIniFile.Create(caminho);
+
+  FConexao := TFDConnection.Create(nil);
+  FConexao.FetchOptions.RowsetSize := 5000;
+
+  FConnList.Add(FConexao);
+  Result := Pred(FConnList.Count);
+  if Tipo='REDE' then
+   Begin
+       BancoDados   := ini.ReadString('REDE','DATABASE','');
+       Usuario      := ini.ReadString('REDE','USERNAME','');
+       Senha        := ini.ReadString('REDE','PASSWORD','');
+       Servidor     := ini.ReadString('REDE','SERVER','');
+       Porta        := ini.ReadString('REDE','PORTA','');
+       Driver       := ini.ReadString('REDE','DRIVERID','' );
+
+    FConnList.Items[Result].LoginPrompt := false;
+    FConnList.Items[Result].Params.Clear;
+    FConnList.Items[Result].Params.Add('Server=' + Servidor);
+    FConnList.Items[Result].Params.Add('user_name=' + Usuario);
+    FConnList.Items[Result].Params.Add('password=' + Senha);
+    FConnList.Items[Result].Params.Add('port=' +   Porta);
+    FConnList.Items[Result].Params.Add('Database=' + BancoDados);
+    FConnList.Items[Result].Params.Add('DriverID=' + Driver);
+
+
+
+
+   end
+   else
+  if Tipo='LOJA' then
+   Begin
+       BancoDados   := 'C:\autobyte\atbtbdd\'+FRede+'\autobyte.gdb';
+       Usuario      := 'SYSDBA'  ;
+       Senha        := 'masterkey';
+       Servidor     := '69.162.107.60';
+       Porta        := '3050'         ;
+       Driver       := 'FB'           ;
+
+    FConnList.Items[Result].LoginPrompt := false;
+    FConnList.Items[Result].Params.Clear;
+    FConnList.Items[Result].Params.Add('Server=' + Servidor);
+    FConnList.Items[Result].Params.Add('user_name=' + Usuario);
+    FConnList.Items[Result].Params.Add('password=' + Senha);
+    FConnList.Items[Result].Params.Add('port=' +   Porta);
+    FConnList.Items[Result].Params.Add('Database=' + BancoDados);
+    FConnList.Items[Result].Params.Add('DriverID=' + Driver);
+
+
+
+   End;
+    FConnList.Items[Result].Connected;
+  End;
+
+end;
+
+procedure Disconnected(Index : Integer);
+begin
+  FConnList.Items[Index].Connected := False;
+  FConnList.Items[Index].Free;
+  FConnList.TrimExcess;
+end;
+
+end.

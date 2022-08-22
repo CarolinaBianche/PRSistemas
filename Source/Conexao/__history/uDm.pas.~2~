@@ -1,0 +1,65 @@
+unit uDm;
+
+interface
+
+uses
+
+  Model.Connection, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  System.SysUtils, System.Classes;
+
+type
+  TDm = class(TDataModule)
+  private
+    FFIndexConn: Integer;
+    procedure SetFIndexConn(const Value: Integer);
+    { Private declarations }
+  public
+    { Public declarations }
+
+    property FIndexConn : Integer read FFIndexConn write SetFIndexConn;
+
+    Function AutenticarUsuario(Login:string;Senha:String;Tipo:String):Boolean;
+
+  end;
+
+var
+  Dm: TDm;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+{ TDm }
+
+function TDm.AutenticarUsuario(Login, Senha, Tipo: String): Boolean;
+var
+ QryUser :TFDQuery;
+begin
+ Try
+  Result := true;
+  Try
+
+  FIndexConn         := Model.Connection.Connected('autobyte');
+  QryUser.Connection := Model.Connection.FConnList.Items[FIndexConn];
+
+  Finally
+   FreeAndNil(QryUser);
+   Model.Connection.FConnList.Items[FIndexConn].Destroy;
+  End;
+ except
+  result:=false;
+ End;
+end;
+
+procedure TDm.SetFIndexConn(const Value: Integer);
+begin
+  FFIndexConn := Value;
+end;
+
+end.

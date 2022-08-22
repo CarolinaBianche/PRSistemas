@@ -1,0 +1,11 @@
+object FrmEmail: TFrmEmail
+  Left = 0
+  Top = 0
+  Caption = 'Envio de Email '
+  ClientHeight = 358
+  ClientWidth = 474
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+end

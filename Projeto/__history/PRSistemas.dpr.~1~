@@ -1,0 +1,20 @@
+program InfoSistemas;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  ufrmLogin in '..\Source\Forms\ufrmLogin.pas' {FrmLogin},
+  ufrmCadastro in '..\Source\Forms\ufrmCadastro.pas' {frmCadastro},
+  info.Classe.Pessoa in '..\Source\Classes\info.Classe.Pessoa.pas',
+  info.funcoes in '..\Source\Library\info.funcoes.pas',
+  uDmRest in '..\Source\Rest\uDmRest.pas' {DmRest: TDataModule},
+  ufrmEmail in '..\Source\Forms\ufrmEmail.pas' {FrmEmail};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFrmLogin, FrmLogin);
+  Application.CreateForm(TDmRest, DmRest);
+  Application.Run;
+end.

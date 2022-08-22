@@ -1,0 +1,38 @@
+unit info.funcoes;
+
+interface
+
+uses
+   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  System.StrUtils,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects, FMX.Ani, FMX.Layouts,
+  Xml.xmldom,Xml.XMLIntf, Xml.XMLDoc;
+
+ Function gravar_pessoa_xml(Nome,Identidade,Cpf,Telefone,email,Cep,Logradouro,
+                        Numero,Complemento,Bairro,Cidade,Estado,Pais:string):Boolean;
+
+implementation
+
+Function gravar_pessoa_xml(Nome,Identidade,Cpf,Telefone,email,Cep,Logradouro,
+                        Numero,Complemento,Bairro,Cidade,Estado,Pais:string):Boolean;
+var
+ XMLEnvio: TXMLDocument;
+begin
+
+  XMLEnvio := TXMLDocument.Create(nil);
+  XMLEnvio.Active := True;
+
+  XMLEnvio.DocumentElement.AddChild('Pessoa');
+  XMLEnvio.DocumentElement.ChildNodes['Pessoa'].AddChild('Nome').NodeValue := Nome;
+  XMLEnvio.DocumentElement.ChildNodes['Pessoa'].AddChild('Identidade').NodeValue := Identidade;
+
+{XMLEnvio.DocumentElement.AddChild(Produto);
+ XMLEnvio.DocumentElement.ChildNodes[Produto].AddChild(referencia).NodeValue := 800;
+ XMLEnvio.DocumentElement.ChildNodes[Produto].AddChild(qtd_estoque).NodeValue := 35;}
+XMLEnvio.SaveToFile((ExtractFilePath(ParamStr(0) + '\temp.xml')));
+
+end;
+
+
+end.

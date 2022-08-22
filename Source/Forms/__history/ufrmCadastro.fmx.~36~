@@ -1,0 +1,770 @@
+﻿object frmCadastro: TfrmCadastro
+  Left = 85
+  Top = 53
+  BorderIcons = []
+  BorderStyle = None
+  Caption = 'Cadastro'
+  ClientHeight = 526
+  ClientWidth = 678
+  Position = Designed
+  SystemStatusBar.BackgroundColor = xFFE2E2E2
+  StyleLookup = 'calloutpanelstyle'
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  Left = 85
+  Top = 53
+  DesignerMasterStyle = 0
+  object lytGeral: TLayout
+    Align = Contents
+    Size.Width = 678.000000000000000000
+    Size.Height = 526.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object rect_titulo: TRectangle
+      Align = Top
+      Fill.Color = xFF858585
+      Size.Width = 678.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      object lblTitulo: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Margins.Top = 2.000000000000000000
+        Position.Y = 2.000000000000000000
+        Size.Width = 678.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 30.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFFE6E6E6
+        TextSettings.HorzAlign = Center
+        Text = 'CADASTRO'
+        TabOrder = 0
+      end
+    end
+    object rectRodapé: TRectangle
+      Align = Bottom
+      Fill.Color = xFFBCBBBB
+      Position.Y = 476.000000000000000000
+      Size.Width = 678.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      object rectSalvar: TRoundRect
+        Align = Right
+        Fill.Color = xFFF3B900
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 548.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 125.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        OnClick = rectSalvarClick
+        object lblSalvar: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Locked = True
+          Size.Width = 75.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColor = xFF1C1C1C
+          TextSettings.HorzAlign = Center
+          Text = 'Salvar'
+          TabOrder = 0
+        end
+        object imgSalvar: TImage
+          MultiResBitmap.Height = 24
+          MultiResBitmap.Width = 24
+          MultiResBitmap = <
+            item
+              Width = 24
+              Height = 24
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+                F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                015049444154484BEDD44B2E04511487F146302031F59A18632196600BDE2412
+                890DD801637BF14A100331B5078F784CF8BEA48EDCBA7DBB553766FEC92F5575
+                FBD4B9B7AA6F77EB3FBDE6A34F076894D2CD4D359A248A9B269D40DF4E12854D
+                93360FB54906AA63C402938F774AD4E7F9BA7FB03AFE593A3DC14FF32B4F708B
+                1D2C6202E358C0363A26BEA86E5EB08521F49C52C3D42B966046B18E733C55CE
+                B0861114536AAA37EC611266063728D5EA1AD3684BA958BB88B8F26ECDC315DA
+                9EA454A858B9D940A9261CE3BE3A5F452D79719845E40231FE9C9CEB086ED139
+                F899DF492D69716A1F914738E62A6D6453AFA3B962EC01B544C3DC3BC660BCC9
+                315F45345C4ECEA3B91A4FA07918B7658CC5AA4DDE5CA7A825FD30B709E33E4F
+                C70FE13F82C7745C2BE8396E3DF779DAE82EBBD62586D157FC11E593A46C3E85
+                1FC527719FFB9EDD593A81AFA55A79ABF5096017D893337B4966000000004945
+                4E44AE426082}
+              FileName = 'C:\Users\Carolina\Downloads\icons8-salvar-e-fechar-24.png'
+            end>
+          Align = Left
+          HitTest = False
+          Size.Width = 50.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          object FillRGBEffect1: TFillRGBEffect
+            Color = xFFFEFEFE
+          end
+        end
+      end
+      object rectLimpar: TRoundRect
+        Align = Right
+        Fill.Color = xFFF35400
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 278.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 125.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        OnClick = rectLimparClick
+        object lblLimpar: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Locked = True
+          Margins.Right = 5.000000000000000000
+          Size.Width = 70.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColor = xFF1C1C1C
+          TextSettings.HorzAlign = Center
+          Text = 'Limpar'
+          TabOrder = 0
+        end
+        object imgLimpar: TImage
+          MultiResBitmap.Height = 24
+          MultiResBitmap.Width = 24
+          MultiResBitmap = <
+            item
+              Width = 24
+              Height = 24
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+                F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                019549444154484BDDD5BB2E04611887F1A54342144EB7E098A810EE82924A22
+                A1A12222A1C025B8081285DAA170B8037A2A111225717C9E35B319B3DFCC8E55
+                F14F7ED92FDFCCBC3B8777BE29FDF93444BF79E9C1047AD1E904B9C3254E71EB
+                443D69C30A6EF08867BC451C3BE7B66DB4A3701A318413BCE3A306F739C6203C
+                B6662C7E8150B13CE7F04F72E36DF1CC43058AF04A5A91993514B92D593C7615
+                C1D82D3EB4F4412358C07D62CEF13C461373316B74A39CE4431947E8F286B18B
+                4D3C441CEFC16DE958C35A55D980ED973E23CF76111D988B38762E7955B127AC
+                A32A3BB0C7D307C842166E461366A3B9D0BED6B0563985FA3690B858562ADB92
+                7FE0EBFFFA35FC96F89EEF631A3338C016DC96CE0BAC559529F8FAC76717B35B
+                92F73CF94CECAEF4FED69844556CAD509BDA8AA136756E2C3117BB46A54DD3F1
+                25F9CD8BE6035E46665C2A0E51EF9F1C2177A930FD70E10A15C85368B1337696
+                3BBA7015B9126F8B673E801FB57D0B96E043B3337C432D26C7F107C7B736F3B6
+                14F964DA11AE2D7DE87282F899BCC25934FEB729953E0106B1E91FD7A7B56C00
+                00000049454E44AE426082}
+              FileName = 'C:\Users\Carolina\Downloads\icons8-cancelar-30.png'
+            end>
+          Align = Left
+          HitTest = False
+          Size.Width = 50.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          object FillRGBEffect2: TFillRGBEffect
+            Color = xFFFEFEFE
+          end
+        end
+      end
+      object rectConcluir: TRoundRect
+        Align = Left
+        Fill.Color = xFF28A400
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 125.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        OnClick = rectConcluirClick
+        object lblConcluir: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Locked = True
+          Margins.Right = 5.000000000000000000
+          Size.Width = 70.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColor = xFF1C1C1C
+          TextSettings.HorzAlign = Center
+          Text = 'Fechar'
+          TabOrder = 0
+        end
+        object imgConcluir: TImage
+          MultiResBitmap.Height = 24
+          MultiResBitmap.Width = 24
+          MultiResBitmap = <
+            item
+              Width = 24
+              Height = 24
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+                F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                017249444154484BEDD4BF2B46511CC7F1C7AF4521C5229205495994586DFE03
+                25599485C162B1DA29B151944532C84C469B418F244A2951A494DF3FDE9F7BEE
+                C9719FFBF3617C3EF5EA9EF33CDD73EEF99E7B4FAE94A494F9579B7E2CA0D1EB
+                A54B1ED338F17A0939C45746EF984768CAFDAB4D9627B7A9409D6916263841DA
+                BC6113735EEF27B3E834CDF05C20AC0CAE0F6CA1053DFE6FAB50CEB06B9A2659
+                57F0897D4CA2061B70A3727599A649D404D7D8C3A3D7335159B6318A262C21B6
+                1C61B125DA410766F08257ACA119DD3880DE1E5B365B22DD2F91B113DC6004D5
+                18874AA19AB7E218DA073B785113C82D8650892AE8C9F551B9035B9113C46D72
+                03D6A1950C6211EDF853DC15587738875BF3A0A25660538F36E815CC9CE004AA
+                B136304B9E70091D17050F113C4DF55E4F20F26C0989065FC10096710FADF8DF
+                528B611C415FFAAF3D08AEC08D0EAE3124D55EFF6B12D1783AF2FBE025EE667D
+                6CBD483AC2F5163DE301A798C2154A49935CEE1BFE6C746EE0815CE800000000
+                49454E44AE426082}
+              FileName = 'C:\Users\Carolina\Downloads\icons8-verificar-todos-os-30.png'
+            end>
+          Align = Left
+          HitTest = False
+          Size.Width = 50.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          object FillRGBEffect3: TFillRGBEffect
+            Color = xFFFEFEFE
+          end
+        end
+      end
+      object rectEmail: TRoundRect
+        Align = Right
+        Fill.Color = xFF0075F3
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 413.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 125.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        OnClick = rectEmailClick
+        object lblEmail: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Locked = True
+          Margins.Right = 5.000000000000000000
+          Size.Width = 66.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColor = xFF1C1C1C
+          TextSettings.HorzAlign = Center
+          Text = 'Email'
+          TabOrder = 0
+        end
+        object imgEmail: TImage
+          MultiResBitmap.Height = 24
+          MultiResBitmap.Width = 24
+          MultiResBitmap = <
+            item
+              Width = 24
+              Height = 24
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+                F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                01B549444154484BB5D5CD2B05511CC6F14148515E16888D859D5829250B2565
+                A164E90F906CAD142B1B0B3676B2B0B0B62065AF080BA5EC2C28C986C4C65B5E
+                BECF9D39E377E7CEDC97E9DEA73EDD73CFCC39BFB96766CEF52A9D9AE0B398F4
+                6209E3B8C513CA96797CE137A0F61C0AA62AF88CE614D57ED3ABC380DFCCC925
+                3EFDA6F78321BFF99FA402BACA1EBF59746E90345F4E54A0D4C48E89ABA825F9
+                808E35C02D5552B4346F50817AB825CB245AA00BD7D0C43AB6877EE48BEEC314
+                544085F4B4DD2327BA41BA729D98768944730CABC34637D4FD4C5BE01CB6CF99
+                4034F6B8E6CA7A48BA318847B8934A8D1BA73946A039C36C630DAD3841DA0267
+                68C32A3467187DD109C768848A959A7568EC1134576C01D14FEC4334EDD8C416
+                3AD51189C6D8254E2C207AB617E1328A67B8E32F1883CB0234C6CE91B780DC41
+                2FD90ABE833E4B7D3AA61DD95EB993B7C00E6A7165FA925C406FFFA1E993C402
+                DAEF9B605FBA4274AE8ACC98BE4C01BBCFE8E5D0CD6BC12B34A0D8E8DC773C40
+                5B85FE2FB2320B3D62FBB05796C6067491CB08D301FD0DC60D48435B4C33C244
+                6F723964EE81DBAE2731ED37CB965D1CF8CD8AC5F3FE001928D131703244B900
+                00000049454E44AE426082}
+              FileName = 'C:\Users\Carolina\Downloads\icons8-email-aberto-50.png'
+            end>
+          Align = Left
+          HitTest = False
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Position.X = 2.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          object FillRGBEffect4: TFillRGBEffect
+            Color = xFFFEFEFE
+          end
+        end
+      end
+      object rectNovo: TRoundRect
+        Align = Right
+        Fill.Color = xFF737F9E
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 143.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 125.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        OnClick = rectNovoClick
+        object Label14: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Locked = True
+          Margins.Right = 5.000000000000000000
+          Size.Width = 70.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColor = xFF1C1C1C
+          TextSettings.HorzAlign = Center
+          Text = 'Novo'
+          TabOrder = 0
+        end
+        object Image1: TImage
+          MultiResBitmap.Height = 24
+          MultiResBitmap.Width = 24
+          MultiResBitmap = <
+            item
+              Width = 24
+              Height = 24
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+                F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                019549444154484BDDD5BB2E04611887F1A54342144EB7E098A810EE82924A22
+                A1A12222A1C025B8081285DAA170B8037A2A111225717C9E35B319B3DFCC8E55
+                F14F7ED92FDFCCBC3B8777BE29FDF93444BF79E9C1047AD1E904B9C3254E71EB
+                443D69C30A6EF08867BC451C3BE7B66DB4A3701A318413BCE3A306F739C6203C
+                B6662C7E8150B13CE7F04F72E36DF1CC43058AF04A5A91993514B92D593C7615
+                C1D82D3EB4F4412358C07D62CEF13C461373316B74A39CE4431947E8F286B18B
+                4D3C441CEFC16DE958C35A55D980ED973E23CF76111D988B38762E7955B127AC
+                A32A3BB0C7D307C842166E461366A3B9D0BED6B0563985FA3690B858562ADB92
+                7FE0EBFFFA35FC96F89EEF631A3338C016DC96CE0BAC559529F8FAC76717B35B
+                92F73CF94CECAEF4FED69844556CAD509BDA8AA136756E2C3117BB46A54DD3F1
+                25F9CD8BE6035E46665C2A0E51EF9F1C2177A930FD70E10A15C85368B1337696
+                3BBA7015B9126F8B673E801FB57D0B96E043B3337C432D26C7F107C7B736F3B6
+                14F964DA11AE2D7DE87282F899BCC25934FEB729953E0106B1E91FD7A7B56C00
+                00000049454E44AE426082}
+              FileName = 'C:\Users\Carolina\Downloads\icons8-cancelar-30.png'
+            end>
+          Align = Left
+          HitTest = False
+          Size.Width = 50.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          object FillRGBEffect5: TFillRGBEffect
+            Color = xFFFEFEFE
+          end
+        end
+      end
+    end
+    object TabControl1: TTabControl
+      Align = Client
+      Size.Width = 678.000000000000000000
+      Size.Height = 426.000000000000000000
+      Size.PlatformDefault = False
+      TabIndex = 1
+      TabOrder = 1
+      TabPosition = PlatformDefault
+      OnChange = TabControl1Change
+      Sizes = (
+        678s
+        400s
+        678s
+        400s)
+      object TabItem1: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 54.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Dados'
+        object Grid1: TGrid
+          Align = Client
+          CanFocus = True
+          ClipChildren = True
+          Size.Width = 678.000000000000000000
+          Size.Height = 400.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
+          OnCellDblClick = Grid1CellDblClick
+          Viewport.Width = 658.000000000000000000
+          Viewport.Height = 375.000000000000000000
+        end
+      end
+      object TabItem2: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = True
+        Size.Width = 68.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Cadastro'
+        object Gbx_endereco: TGroupBox
+          Align = Top
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 185.000000000000000000
+          Size.Width = 668.000000000000000000
+          Size.Height = 206.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Dados Localidade'
+          TabOrder = 2
+          object edtCep: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 1
+            Position.X = 11.000000000000000000
+            Position.Y = 37.000000000000000000
+            Size.Width = 324.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Digite o Cep'
+            OnChange = edtCepChange
+            OnKeyUp = edtCepKeyUp
+          end
+          object Label6: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 11.000000000000000000
+            Position.Y = 22.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF6F6F6F
+            Text = 'CEP'
+            TabOrder = 14
+          end
+          object Label7: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 339.000000000000000000
+            Position.Y = 22.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF6F6F6F
+            Text = 'Logradouro'
+            TabOrder = 13
+          end
+          object edtLogradouro: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 2
+            Position.X = 339.000000000000000000
+            Position.Y = 37.000000000000000000
+            Size.Width = 324.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Digite o Logradouro'
+          end
+          object Label8: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 11.000000000000000000
+            Position.Y = 118.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF6F6F6F
+            Text = 'Bairro'
+            TabOrder = 3
+          end
+          object edtBairro: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 7
+            Position.X = 11.000000000000000000
+            Position.Y = 133.000000000000000000
+            Size.Width = 324.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Digite o Bairro'
+          end
+          object Label9: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 339.000000000000000000
+            Position.Y = 118.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF6F6F6F
+            Text = 'Cidade'
+            TabOrder = 8
+          end
+          object edtCidade: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 9
+            Position.X = 339.000000000000000000
+            Position.Y = 133.000000000000000000
+            Size.Width = 324.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Digite a Cidade'
+          end
+          object Label10: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 11.000000000000000000
+            Position.Y = 163.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF6F6F6F
+            Text = 'Estado'
+            TabOrder = 6
+          end
+          object edtEstado: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 11
+            Position.X = 11.000000000000000000
+            Position.Y = 178.000000000000000000
+            Size.Width = 324.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Digite o Estado'
+          end
+          object Label12: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 12.000000000000000000
+            Position.Y = 70.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF6F6F6F
+            Text = 'N'#250'mero'
+            TabOrder = 10
+          end
+          object edtNumero: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 4
+            Position.X = 11.000000000000000000
+            Position.Y = 85.000000000000000000
+            Size.Width = 324.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Digite o N'#250'mero'
+          end
+          object Label11: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 340.000000000000000000
+            Position.Y = 161.000000000000000000
+            Size.Width = 118.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF6F6F6F
+            Text = 'Pais'
+            TabOrder = 15
+          end
+          object edtPais: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 12
+            Position.X = 339.000000000000000000
+            Position.Y = 177.000000000000000000
+            Size.Width = 324.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Digite o Pais'
+          end
+          object edtComplemento: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 5
+            Position.X = 339.000000000000000000
+            Position.Y = 84.000000000000000000
+            Size.Width = 324.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Digite o Complemento'
+          end
+          object Label13: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 341.000000000000000000
+            Position.Y = 68.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF6F6F6F
+            Text = 'Complemento'
+            TabOrder = 16
+          end
+        end
+        object gbx_dadoscadastrais: TGroupBox
+          Align = Top
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 668.000000000000000000
+          Size.Height = 170.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Dados Cadastrais'
+          TabOrder = 1
+          object edtNome: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 0
+            Position.X = 11.000000000000000000
+            Position.Y = 37.000000000000000000
+            Size.Width = 324.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Digite o Nome'
+          end
+          object Label1: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 11.000000000000000000
+            Position.Y = 22.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF6F6F6F
+            Text = 'Nome'
+            TabOrder = 9
+          end
+          object Label2: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 11.000000000000000000
+            Position.Y = 70.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF6F6F6F
+            Text = 'Identidade'
+            TabOrder = 8
+          end
+          object edtRG: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 1
+            Position.X = 11.000000000000000000
+            Position.Y = 85.000000000000000000
+            Size.Width = 324.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Digite o RG'
+            OnKeyUp = edtRGKeyUp
+          end
+          object Label3: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 339.000000000000000000
+            Position.Y = 70.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF6F6F6F
+            Text = 'CPF'
+            TabOrder = 5
+          end
+          object edtCpf: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 2
+            Position.X = 339.000000000000000000
+            Position.Y = 85.000000000000000000
+            Size.Width = 324.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Digite o CPF'
+            OnKeyUp = edtCpfKeyUp
+          end
+          object Label4: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 11.000000000000000000
+            Position.Y = 115.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF6F6F6F
+            Text = 'Nome M'#227'e'
+            TabOrder = 7
+          end
+          object edtTelefone: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 3
+            Position.X = 11.000000000000000000
+            Position.Y = 130.000000000000000000
+            Size.Width = 324.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Digite o Nome da M'#227'e'
+          end
+          object Label5: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 339.000000000000000000
+            Position.Y = 115.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 13.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF6F6F6F
+            Text = 'Nome Pai'
+            TabOrder = 6
+          end
+          object edtemail: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 4
+            Position.X = 339.000000000000000000
+            Position.Y = 130.000000000000000000
+            Size.Width = 324.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Digite o Nome do Pai'
+          end
+        end
+      end
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = DmRest.Qry
+    ScopeMappings = <>
+    Left = 616
+    Top = 152
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkGridToDataSourceBindSourceDB12: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = Grid1
+      Columns = <
+        item
+          MemberName = 'ID'
+        end
+        item
+          MemberName = 'CPF'
+        end
+        item
+          MemberName = 'Nome'
+        end>
+    end
+  end
+end

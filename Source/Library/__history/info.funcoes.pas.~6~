@@ -1,0 +1,87 @@
+unit info.funcoes;
+
+interface
+
+uses
+   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  System.StrUtils,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects, FMX.Ani, FMX.Layouts,
+  Xml.xmldom,Xml.XMLIntf, Xml.XMLDoc;
+
+ Function gravar_pessoa_xml(Nome,Identidade,Cpf,Telefone,email,Cep,Logradouro,
+                        Numero,Complemento,Bairro,Cidade,Estado,Pais:string):Boolean;
+
+implementation
+
+Function gravar_pessoa_xml(Nome,Identidade,Cpf,Telefone,email,Cep,Logradouro,
+                        Numero,Complemento,Bairro,Cidade,Estado,Pais:string):Boolean;
+Var
+  XML : IXMLDOCUMENT;
+  NodeTabela, NodeRegistro, NodeEndereco: IXMLNode;
+  I: Integer;
+  Caminho,Arquivo:string;
+begin
+  XML := NewXMLDocument;
+  XML.Encoding := 'utf-8';
+  XML.Options := [doNodeAutoIndent]; // looks better in Editor ;)
+ try
+  with XML do
+  begin
+    Active := True;
+    Version := '1.0';
+    Encoding := 'ISO-8859-1';
+
+    DocumentElement:=CreateNode('Cadastro',ntElement);
+    with DocumentElement do
+      begin
+
+        with AddChild('Pessoa') do
+          begin
+            with AddChild('Nome') do
+                Text := Nome;
+            with AddChild('Identidade') do
+                Text := Identidade;
+            with AddChild('CPF') do
+                Text := Cpf;
+            with AddChild('Telefone') do
+                Text := Telefone;
+            with AddChild('Email') do
+                Text := email ;
+
+            with AddChild('Endereco') do
+            begin
+              with AddChild('Cep') do
+                Text := Cep;
+               with AddChild('Logradouro') do
+                Text := Logradouro;
+               with AddChild('Numero') do
+                Text := Numero;
+               with AddChild('Complemento') do
+                Text := Complemento;
+               with AddChild('Bairro') do
+                Text := Bairro;
+               with AddChild('Cidade') do
+                Text := Cidade;
+               with AddChild('Estado') do
+                Text := Estado;
+               with AddChild('Pais') do
+                Text := Pais;
+             end;
+          end;
+
+
+      end;
+  end;
+
+  finally
+    Arquivo       := 'temp.xml';
+    caminho       := ExtractFilePath(ParamStr(0));
+    XML.SaveToFile(caminho+Arquivo);
+
+  end;
+
+end;
+
+
+end.

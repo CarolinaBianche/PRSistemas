@@ -1,0 +1,7 @@
+Instruções : 
+
+Executar os scripts para a criação do banco de dados, 
+banco de dados criado utilizando usuário e senha do windows; 
+
+O Arquivo de Configuração do Banco de Dados encontra-se dentro da Pasta Instalação\Conexao\Config.ini;
+Essa pasta Conexão deve ser colocada na pasta do executável; 

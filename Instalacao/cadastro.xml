@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Cadastro>
+  <Pessoa>
+    <Nome>teste</Nome>
+    <Identidade>1</Identidade>
+    <CPF>1</CPF>
+    <Telefone>te</Telefone>
+    <Email>tes</Email>
+    <Endereco>
+      <Cep>07124320</Cep>
+      <Logradouro>Rua Santa Helena</Logradouro>
+      <Numero>1</Numero>
+      <Complemento></Complemento>
+      <Bairro>Vila Bremen</Bairro>
+      <Cidade>Guarulhos</Cidade>
+      <Estado>SP</Estado>
+      <Pais></Pais>
+    </Endereco>
+  </Pessoa>
+</Cadastro>
